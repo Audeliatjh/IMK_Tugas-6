@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | Go Rent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #28313a;
+        }
+
+        .profile-card {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: black;
+            color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("/gambar/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .features {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        .footer img.logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .footer h2 {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        .footer .nama {
+            align-items: center;
+        }
+
+        .quick p {
+            margin: 4px 0;
+            cursor: pointer;
+        }
+
+        .quick p:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .navbar form {
+            width: 260px;
+        }
+
+        .navbar .form-control {
+            background-color: rgb(221, 226, 226);
+
+        }
+        #footer-menu a{
+            color: white;
+            text-decoration: none;
+        }
+        #footer-menu a:hover{
+            /* color: white; */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <!-- Customize : Saya memilih komponen bagian color untuk membuat navbar saya menjadi background hitam dan bertulisan putih -->
+    <!-- Forms : Saya memilih komponen Form control untuk fitur cari -->
+    <!-- Components : Saya memilih komponen Navbar untuk mempercantik isi desain saya -->
+    <!-- Helpers : Saya memilih komponen bagian Position untuk membuat navbar saya menjadi responsif sticky-top -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Go Rent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order.html">Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Riwayat</a>
+                    </li>
+                </ul>
+                <div class="search-profile d-flex">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="profile">
+                            <a href="/profile.html">
+                                <img src="/gambar/9341656.png" class="img-fluid" alt="Profile">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile -->
+
+    <!-- Forms : Saya menggunakan komponen bagian Form-control untuk memperlihatkan isi profile -->
+
+    <div class="container">
+        <div class="profile-card text-center">
+            <img src="/gambar/9341656.png" alt="Foto Profil" class="profile-img mx-auto d-block">
+            <h4 class="mb-3">Profil Saya</h4>
+            <form>
+                <div class="mb-3 text-start">
+                    <label for="namaLengkap" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="namaLengkap" value="Vanessa Febry" disabled>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="febry@gmail.com" disabled>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="telepon" class="form-label">No Telepon</label>
+                    <input type="tel" class="form-control" id="telepon" value="+62 853-4381-6688" disabled>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <textarea class="form-control" id="alamat" rows="2" disabled>Jl. Andi Tonro 4 No. 12, Makassar</textarea>
+                </div>
+                <div class="update mb-3">
+                    <a href="edit.html" type="submit" class="btn btn-primary w-100">Edit</a>
+                </div>
+                <div class="update">
+                    <button type="submit" class="btn btn-danger w-100">Hapus akun</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row row-cols-lg-3">
+                <div class="footer mb-3">
+                    <div class="nama d-flex align-items-center">
+                        <h2 class="fw-bold ms-2">Go Rent</h2>
+                    </div>
+                    <p class="small mt-2">
+                        Solusi rental kendaraan terbaik untuk kebutuhan harian, bisnis, dan liburan.
+                    </p>
+                    <img src="/gambar/instagram.png" class="logo" alt="Instagram">
+                    <img src="/gambar/facebook-app-symbol.png" class="logo" alt="Facebook">
+                    <img src="/gambar/twitter.png" class="logo" alt="Twitter">
+                    <img src="/gambar/whatsapp.png" class="logo" alt="WhatsApp">
+                    <img src="/gambar/tik-tok.png" class="logo" alt="TikTok">
+                </div>
+                <div id="footer-menu" class="quick col-md-3 mb-3">
+                    <h5>Tautan</h5>
+                    <a href="home.html" class="small">Beranda</a>
+                    <br>
+                    <a href="/order.html" class="small">Pemesanan</a>
+                    <p class="small">Riwayat</p>
+                    <p class="small">Tentang Kami</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Kontak</h5>
+                    <p class="small">Jl. Teknologi No. 123</p>
+                    <p class="small">Jakarta, Indonesia</p>
+                    <p class="small">Email: support@gorent.id</p>
+                    <p class="small">Phone: +62 812-3456-7890</p>
+                </div>
+            </div>
+            <hr class="border-light">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2025 Go Rent. All rights reserved.</p>
+                <p class="mb-0">Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

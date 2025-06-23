@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan | Go Rent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        .rent-option img {
+            width: 150px;
+            height: 150px;
+            justify-items: center;
+        }
+
+        .view a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .view {
+            background-color: #198754;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #28313a;
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("/gambar/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .features {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        .footer img.logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .footer h2 {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        .footer .nama {
+            align-items: center;
+        }
+
+        .quick p {
+            margin: 4px 0;
+            cursor: pointer;
+        }
+
+        .quick p:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .rent-option {
+            margin: 0px 100px;
+        }
+
+        button.location b:hover {
+            color: red;
+            cursor: pointer;
+        }
+        .navbar form {
+            width: 260px;
+        }
+        .navbar .form-control {
+            background-color: rgb(221, 226, 226);
+        }
+        .container button{
+            background-color: white;
+            color: black;
+        }
+        .dropdown .btn{
+            background-color: white;
+            color: #000000;
+        }
+        .dropdown .btn:hover{
+            background-color: #636c77;
+            color: white;
+        }
+        .dropdown-menu a:hover{
+            background-color: #636c77;
+            color: white;
+        }
+        .card-body .btn{
+            background-color: aliceblue;
+            color: black;
+            font-weight: 600;
+        }
+        .card-body .btn:hover{
+            color: aliceblue;
+            background-color: black;
+        }
+        .card{
+            background-color: #3E5879;
+            color: white;
+        }
+        .navbar form {
+            width: 260px;
+        }
+
+        .navbar .form-control {
+            background-color: rgb(221, 226, 226);
+        }
+        #footer-menu a{
+            color: white;
+            text-decoration: none;
+        }
+        #footer-menu a:hover{
+            /* color: white; */
+            text-decoration: underline;
+        }
+        .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <!-- Customize : Saya memilih komponen bagian color untuk membuat navbar saya menjadi background hitam dan bertulisan putih -->
+    <!-- Forms : Saya memilih komponen Form control untuk fitur cari -->
+    <!-- Components : Saya memilih komponen Navbar untuk mempercantik isi desain saya -->
+    <!-- Helpers : Saya memilih komponen bagian Position untuk membuat navbar saya menjadi responsif sticky-top -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Go Rent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/order.html">Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Riwayat</a>
+                    </li>
+                </ul>
+                <div class="search-profile d-flex">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="profile">
+                            <a href="/profile.html">
+                                <img src="/gambar/9341656.png" class="img-fluid" alt="Profile">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Location -->
+    <div class="container mt-3">
+        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Pilih Lokasi Rental
+        </button>
+    </div>
+
+    <!-- Modal -->
+
+    <!-- Component : Saya menggunakan komponen Modal untuk membuat overlay mencari lokasi -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalLabel">Lokasi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control mb-2" type="search" placeholder="Search" aria-label="Search">
+                    <h1 class="modal-title fs-5 mb-2" id="exampleModalLabel">Riwayat</h1>
+                    <button type="button" class="btn location bg-body-tertiary" data-bs-dismiss="modal">salatiga <b> x
+                        </b></button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Kendaraan -->
+
+    <!-- Components : Saya menggunakan komponen Dropdowns untuk membuat pilihan -->
+
+    <div class="container mt-3 mb-4">
+        <div class="dropdown">
+            <a class="btn dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Jenis Kendaraan
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Car</a></li>
+                <li><a class="dropdown-item" href="#">Motorcycle</a></li>
+                <li><a class="dropdown-item" href="#">Bicycle</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tempat rental -->
+
+    <!-- Component : Saya memilih komponen Card untuk membuat container pilihan tempat rental -->
+    <!-- Layout : Saya menggunakan komponen Columns untuk membuat desain menjadi responsif -->
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 rent-option">
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/nz.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="NZ Rental">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">NZ Rental</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="/nz-rent.html" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/smile.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Smile Rental</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/bento.jpeg" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Rental Motor Bento</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/aa.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">AA Rent</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/triple7.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Triple7 Rent</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/4tune.jpg" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">4Tune Rent</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/all.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">All Rent</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/anzer.png" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Anzer Rental</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/algee.jpeg" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Al Gee Rent</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 shadow-sm" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/gambar/faezya.webp" class="img-fluid rounded-start object-fit-cover w-100"
+                            style="height: 150px;" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <h5 class="card-title mb-1">Faezya Rental</h5>
+                                <p class="card-text small mb-2">Jl. Kemiri 2 no. 38<br>WA : 0823-1853-9233</p>
+                            </div>
+                            <a href="#" class="btn btn-sm mt-2 w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row row-cols-lg-3">
+                <div class="footer mb-3">
+                    <div class="nama d-flex align-items-center">
+                        <h2 class="fw-bold ms-2">Go Rent</h2>
+                    </div>
+                    <p class="small mt-2">
+                        Solusi rental kendaraan terbaik untuk kebutuhan harian, bisnis, dan liburan.
+                    </p>
+                    <img src="/gambar/instagram.png" class="logo" alt="Instagram">
+                    <img src="/gambar/facebook-app-symbol.png" class="logo" alt="Facebook">
+                    <img src="/gambar/twitter.png" class="logo" alt="Twitter">
+                    <img src="/gambar/whatsapp.png" class="logo" alt="WhatsApp">
+                    <img src="/gambar/tik-tok.png" class="logo" alt="TikTok">
+                </div>
+                <div id="footer-menu" class="quick col-md-3 mb-3">
+                    <h5>Tautan</h5>
+                    <a href="home.html" class="small">Beranda</a>
+                    <br>
+                    <a href="/order.html" class="small">Pemesanan</a>
+                    <p class="small">Riwayat</p>
+                    <p class="small">Tentang Kami</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Kontak</h5>
+                    <p class="small">Jl. Teknologi No. 123</p>
+                    <p class="small">Jakarta, Indonesia</p>
+                    <p class="small">Email: support@gorent.id</p>
+                    <p class="small">Phone: +62 812-3456-7890</p>
+                </div>
+            </div>
+            <hr class="border-light">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2025 Go Rent. All rights reserved.</p>
+                <p class="mb-0">Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
